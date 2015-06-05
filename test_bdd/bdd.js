@@ -11,12 +11,6 @@ var totalRooms = 4
     , buffaloGrasssss = false
     , expect = require('chai').expect;
 
-// TODO-rob
-
-// TODO-hafeez
-// TODO-hafeez
-
-// TODO-rob
 
 describe('Constructing house', function() {
 
