@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0051)http://10.70.6.72:5290/wrds/AccessManagement.action -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>WRDS -- Access Management</title>
+    <link rel="stylesheet" type="text/css" href="./WRDS -- Access Management_files/wrds.css">
+    <link rel="stylesheet" type="text/css" href="./WRDS -- Access Management_files/print.css" media="print">
+    <link rel="stylesheet" type="text/css" media="all" href="./WRDS -- Access Management_files/calendar-system.css">
+    <script type="text/javascript" src="./WRDS -- Access Management_files/wrds.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/gap.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/calendar.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/calendar-en.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/calendar-setup.js"></script>
+    <style type="text/css" title="currentStyle">
+        @import "/wrds/css/page.css";
+        @import "/wrds/css/table.css";
+        @import "/wrds/css/TableTools.css";
+    </style>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="./WRDS -- Access Management_files/TableTools.min.js"></script>
+
+    <script type="text/javascript" src="./WRDS -- Access Management_files/wrds_table.js"></script>
+
+
+</head>
+<body onload="checkIfLockPage()" cz-shortcut-listen="true">
+<div id="contentPanel">
+
+    <div id="imageHeader">
+
+        <div id="loginStatus">
+            <strong>User:</strong> user1&nbsp;
+            <strong>Group:</strong> aWRDS_SysAdm&nbsp;
+            <a href="javascript: window.opener=''; window.close();">Logout</a>
+        </div>
+
+
+        <div style="margin: 0px; width: 100%;">
+            <div id="bannerTitle">WRDS</div>
+        </div>
+    </div>
+    <div class="horizontalmenu">
+        <ul>
+
+            <li><a href="http://10.70.6.72:5290/wrds/Blocking.action">Device Blocking/Unblocking</a></li>
+
+            <li><a href="http://10.70.6.72:5290/wrds/IMEIProcesses.action">Batch Processes</a></li>
+
+            <li><a href="http://10.70.6.72:5290/wrds/EnhancedReport.action">Reports</a></li>
+
+            <li><a href="http://10.70.6.72:5290/wrds/SystemConfigView.action">System Configuration</a></li>
+
+            <li><a href="./WRDS -- Access Management_files/WRDS -- Access Management.html">Access Management</a></li>
+
+            <li><a href="http://10.70.6.72:5290/wrds/AccessManagement.action#"
+                   onclick="openHelp(&#39;/wrds/help/htm/screen_descriptor_access.htm&#39;)">Help</a></li>
+        </ul>
+    </div>
+
+    <div id="pageContent">
+
+        <div class="indentedContent">
+            <h1>Access Management</h1>
+
+            <form name="accessManagement" action="./WRDS -- Access Management_files/WRDS -- Access Management.html"
+                  method="post">
+
+                <h2>Manage Groups</h2>
+
+                <div id="accessGroupTable_wrapper" class="dataTables_wrapper" role="grid">
+                    <div id="accessGroupTable_processing" class="dataTables_processing" style="visibility: hidden;">
+                        Processing...
+                    </div>
+                    <div class="dataTables_scroll">
+                        <div class="dataTables_scrollHead"
+                             style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                            <div class="dataTables_scrollHeadInner" style="width: 935px; padding-right: 0px;">
+                                <table class="dataTable" style="margin-left: 0px; width: 935px;">
+                                    <thead>
+                                    <tr role="row">
+                                        <td class="sorting_asc" role="columnheader" tabindex="0"
+                                            aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                            aria-sort="ascending"
+                                            aria-label="&amp;nbsp;: activate to sort column descending"
+                                            style="width: 21px;">&nbsp;</td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                            aria-label="Group: activate to sort column ascending" style="width: 183px;">
+                                            Group
+                                        </td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                            aria-label="Description: activate to sort column ascending"
+                                            style="width: 243px;">Description
+                                        </td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                            aria-label="Role(s): activate to sort column ascending"
+                                            style="width: 277px;">Role(s)
+                                        </td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                            aria-label="Details: activate to sort column ascending"
+                                            style="width: 201px;">Details
+                                        </td>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="dataTables_scrollBody" style="overflow: auto; width: 100%; height: 306px;">
+                            <table id="accessGroupTable" class="dataTable" style="margin-left: 0px; width: 935px;">
+                                <thead>
+                                <tr role="row" style="height: 0px;">
+                                    <td class="sorting_asc" role="columnheader" tabindex="0"
+                                        aria-controls="accessGroupTable" rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="&amp;nbsp;: activate to sort column descending"
+                                        style="width: 21px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0"
+                                        aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                        aria-label="Group: activate to sort column ascending"
+                                        style="width: 183px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0"
+                                        aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                        aria-label="Description: activate to sort column ascending"
+                                        style="width: 243px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0"
+                                        aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                        aria-label="Role(s): activate to sort column ascending"
+                                        style="width: 277px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0"
+                                        aria-controls="accessGroupTable" rowspan="1" colspan="1"
+                                        aria-label="Details: activate to sort column ascending"
+                                        style="width: 201px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                </tr>
+                                </thead>
+
+
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_SysAdm" type="radio"></td>
+                                    <td class=" ">aWRDS_SysAdm</td>
+                                    <td class=" ">WRDS system administrator</td>
+                                    <td class=" ">SYSADM, L</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:41
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_Ops" type="radio"></td>
+                                    <td class=" ">aWRDS_Ops</td>
+                                    <td class=" ">Super user</td>
+                                    <td class=" ">L-PS, SuperUser, L, L-AMTA, I-TPCMI, I-ASURION, I-AMTA, R, L-C, E,
+                                        F-E
+                                    </td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:41
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_BOH" type="radio"></td>
+                                    <td class=" ">aWRDS_BOH</td>
+                                    <td class=" ">Back of house staff</td>
+                                    <td class=" ">L-PS, CustSuppBoH, L, I-TPCMI, I-ASURION</td>
+                                    <td class=" ">Created by user: d287283 on date: 02/10/2009 11:00
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_Wholesale_FoH"
+                                                                  type="radio"></td>
+                                    <td class=" ">aWRDS_Wholesale_FoH</td>
+                                    <td class=" ">IMEI blocking/unblocking of Wholesale devices</td>
+                                    <td class=" ">LSOnlyGroups, L</td>
+                                    <td class=" ">Created by user: d300868 on date: 23/04/2014 14:56
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_Finance_Admin"
+                                                                  type="radio"></td>
+                                    <td class=" ">aWRDS_Finance_Admin</td>
+                                    <td class=" ">IMEI blocking for fraud</td>
+                                    <td class=" ">FOH, F-E, FraudTeam</td>
+                                    <td class=" ">Created by user: d300868 on date: 23/04/2014 14:57
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_Mobile_Assurance"
+                                                                  type="radio"></td>
+                                    <td class=" ">aWRDS_Mobile_Assurance</td>
+                                    <td class=" ">FoH IMEI blocking/unblocking for Lost and Stolen device process</td>
+                                    <td class=" ">LSOnlyGroups, L</td>
+                                    <td class=" ">Created by user: d300868 on date: 23/04/2014 14:58
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_TBA_GES_FoH" type="radio">
+                                    </td>
+                                    <td class=" ">aWRDS_TBA_GES_FoH</td>
+                                    <td class=" ">TBA and GES FoH agents</td>
+                                    <td class=" ">LSOnlyGroups, L</td>
+                                    <td class=" ">Created by user: d300868 on date: 15/05/2014 13:29
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_Reports_Consumer"
+                                                                  type="radio"></td>
+                                    <td class=" ">aWRDS_Reports_Consumer</td>
+                                    <td class=" ">Read Only Users</td>
+                                    <td class=" ">ReadOnly</td>
+                                    <td class=" ">Created by user: d299608 on date: 03/09/2014 10:32
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="groupId" value="aWRDS_FoH_Business"
+                                                                  type="radio"></td>
+                                    <td class=" ">aWRDS_FoH_Business</td>
+                                    <td class=" ">Chief Risk Office</td>
+                                    <td class=" ">L-PS, L-C, ChiefRiskOffice</td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:45
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="aligncenter buttonPane">
+
+                    <input name="addGroup" value="Add Group"
+                           onclick="clearRadioButtons(document.accessManagement.groupId)" class="searchButton"
+                           type="submit">
+                    <input name="editGroup" value="Edit Group" class="searchButton" type="submit">
+
+
+                    <input name="deleteGroup" value="Delete Group"
+                           onclick="return validateRadioButtons(&#39;groupId&#39;, &#39;Are you sure you want to delete the group&#39;)"
+                           class="searchButton" type="submit">
+
+                </div>
+                <br>
+                <br>
+
+                <h2>Manage Roles</h2>
+
+                <div id="accessRoleTable_wrapper" class="dataTables_wrapper" role="grid">
+                    <div id="accessRoleTable_processing" class="dataTables_processing" style="visibility: hidden;">
+                        Processing...
+                    </div>
+                    <div class="dataTables_scroll">
+                        <div class="dataTables_scrollHead"
+                             style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                            <div class="dataTables_scrollHeadInner" style="width: 918px; padding-right: 17px;">
+                                <table class="dataTable" style="margin-left: 0px; width: 918px;">
+                                    <thead>
+                                    <tr role="row">
+                                        <td class="sorting_asc" role="columnheader" tabindex="0"
+                                            aria-controls="accessRoleTable" rowspan="1" colspan="1"
+                                            aria-sort="ascending"
+                                            aria-label="&amp;nbsp;: activate to sort column descending"
+                                            style="width: 21px;">&nbsp;</td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessRoleTable" rowspan="1" colspan="1"
+                                            aria-label="Role: activate to sort column ascending" style="width: 101px;">
+                                            Role
+                                        </td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessRoleTable" rowspan="1" colspan="1"
+                                            aria-label="Description: activate to sort column ascending"
+                                            style="width: 461px;">Description
+                                        </td>
+                                        <td class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="accessRoleTable" rowspan="1" colspan="1"
+                                            aria-label="Details: activate to sort column ascending"
+                                            style="width: 327px;">Details
+                                        </td>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="dataTables_scrollBody" style="overflow: auto; width: 100%; height: 500px;">
+                            <table id="accessRoleTable" class="dataTable" style="margin-left: 0px; width: 918px;">
+                                <thead>
+                                <tr role="row" style="height: 0px;">
+                                    <td class="sorting_asc" role="columnheader" tabindex="0"
+                                        aria-controls="accessRoleTable" rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="&amp;nbsp;: activate to sort column descending"
+                                        style="width: 21px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0" aria-controls="accessRoleTable"
+                                        rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending"
+                                        style="width: 101px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0" aria-controls="accessRoleTable"
+                                        rowspan="1" colspan="1"
+                                        aria-label="Description: activate to sort column ascending"
+                                        style="width: 461px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                    <td class="sorting" role="columnheader" tabindex="0" aria-controls="accessRoleTable"
+                                        rowspan="1" colspan="1" aria-label="Details: activate to sort column ascending"
+                                        style="width: 327px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></td>
+                                </tr>
+                                </thead>
+
+
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="SYSADM" type="radio"></td>
+                                    <td class=" ">SYSADM</td>
+                                    <td class=" ">WRDS system administrator rights</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:30
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="FOH" type="radio"></td>
+                                    <td class=" ">FOH</td>
+                                    <td class=" ">Front of house staff rights</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:32
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="BOH" type="radio"></td>
+                                    <td class=" ">BOH</td>
+                                    <td class=" ">Back of house staff rights</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:35
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="OPS" type="radio"></td>
+                                    <td class=" ">OPS</td>
+                                    <td class=" ">Operations staff rights</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:39
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="Reports" type="radio"></td>
+                                    <td class=" ">Reports</td>
+                                    <td class=" ">Reporting rights</td>
+                                    <td class=" ">Created by user: system on date: 03/06/2009 16:41
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="L-PS" type="radio"></td>
+                                    <td class=" ">L-PS</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Telstra Pre-sale
+                                        stolen"
+                                    </td>
+                                    <td class=" ">Created by user: d300868 on date: 19/08/2014 23:33
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="LSOnlyGroups" type="radio">
+                                    </td>
+                                    <td class=" ">LSOnlyGroups</td>
+                                    <td class=" ">Front of House users</td>
+                                    <td class=" ">Created by user: d300868 on date: 19/08/2014 23:36
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="CustSuppBoH" type="radio"></td>
+                                    <td class=" ">CustSuppBoH</td>
+                                    <td class=" ">Back of House users</td>
+                                    <td class=" ">Created by user: d327547 on date: 20/08/2014 00:32
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="SuperUser" type="radio"></td>
+                                    <td class=" ">SuperUser</td>
+                                    <td class=" ">Super Users</td>
+                                    <td class=" ">Created by user: d327547 on date: 20/08/2014 00:34
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="L" type="radio"></td>
+                                    <td class=" ">L</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Lost &amp; Stolen"
+                                    </td>
+                                    <td class=" ">Created by user: d327547 on date: 20/08/2014 00:35
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="L-AMTA" type="radio"></td>
+                                    <td class=" ">L-AMTA</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "AMTA - Lost &amp;
+                                        Stolen"
+                                    </td>
+                                    <td class=" ">Created by user: d300868 on date: 20/08/2014 00:38
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="I-TPCMI" type="radio"></td>
+                                    <td class=" ">I-TPCMI</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "TPCMI (Insurance)"
+                                    </td>
+                                    <td class=" ">Created by user: d300868 on date: 20/08/2014 00:39
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="I-ASURION" type="radio"></td>
+                                    <td class=" ">I-ASURION</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Stayconnected
+                                        (Asurion)"
+                                    </td>
+                                    <td class=" ">Created by user: d300868 on date: 20/08/2014 00:41
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="I-AMTA" type="radio"></td>
+                                    <td class=" ">I-AMTA</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "AMTA - Insurance
+                                        Claim"
+                                    </td>
+                                    <td class=" ">Created by user: d300868 on date: 20/08/2014 00:42
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="R" type="radio"></td>
+                                    <td class=" ">R</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Rogue"</td>
+                                    <td class=" ">Created by user: d300868 on date: 20/08/2014 00:43
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="ReadOnly" type="radio"></td>
+                                    <td class=" ">ReadOnly</td>
+                                    <td class=" ">WRDS Read Only Access</td>
+                                    <td class=" ">Created by user: d299608 on date: 03/09/2014 10:31
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="L-C" type="radio"></td>
+                                    <td class=" ">L-C</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Lost &amp; Stolen -
+                                        Corporate"
+                                    </td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:25
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="E" type="radio"></td>
+                                    <td class=" ">E</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Law Enforcement"</td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:26
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="F-E" type="radio"></td>
+                                    <td class=" ">F-E</td>
+                                    <td class=" ">Role for accessing Telstra blocking reason code "Fraud External"</td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:26
+                                    </td>
+                                </tr>
+                                <tr class="even">
+                                    <td class=" sorting_1"><input name="roleName" value="FraudTeam" type="radio"></td>
+                                    <td class=" ">FraudTeam</td>
+                                    <td class=" ">Fraud Team</td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:27
+                                    </td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class=" sorting_1"><input name="roleName" value="ChiefRiskOffice" type="radio">
+                                    </td>
+                                    <td class=" ">ChiefRiskOffice</td>
+                                    <td class=" ">Chief Risk Office</td>
+                                    <td class=" ">Created by user: user1 on date: 10/03/2015 16:35
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="aligncenter buttonPane">
+                    <input name="viewRole" value="View Role" class="searchButton" type="submit">
+
+                    <input name="addRole" value="Add Role"
+                           onclick="clearRadioButtons(document.accessManagement.roleName)" class="searchButton"
+                           type="submit">
+                    <input name="editRole" value="Edit Role" class="searchButton" type="submit">
+
+
+                    <input name="deleteRole" value="Delete Role"
+                           onclick="return validateRadioButtons(&#39;roleName&#39;, &#39;Are you sure you want to delete the role&#39;)"
+                           class="searchButton" type="submit">
+
+                </div>
+                <div style="display: none;"><input type="hidden" name="_sourcePage"
+                                                   value="GObvZDb2nzT6mmJpuDwkw6cR1KMcqyP6u1FqnrrNq4Y="><input
+                        type="hidden" name="__fp" value="VxZpLxcOfrE="></div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(document)
+                    .ready(
+                    function () {
+
+                        formatTable_ShowAll(
+                                '#accessGroupTable',
+                                "There are currently no groups to display.");
+                        formatTable_ShowAll(
+                                '#accessRoleTable',
+                                "There are currently no roles to display.");
+
+                    });
+        </script>
+
+    </div>
+
+    <div id="footer">
+
+    </div>
+</div>
+
+
+</body>
+</html>

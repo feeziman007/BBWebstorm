@@ -1,0 +1,41 @@
+/* -------------------- Link Styles -------------------- */
+.fyiT1 {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #FF6600;
+}
+
+.fyiT1Large {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #FF6600;
+}
+
+.fyiT1:link, .fyiT1:visited, .fyiT1Large:link, .fyiT1Large:visited, .fyiLtLink:active, .fyiLtLink:hover {
+    color: #FF6600;
+}
+
+.fyiT1:active, .fyiT1:hover, .fyiT1Large:active, .fyiT1Large:hover {
+    color: #FF0000;
+}
+
+.fyiLtLink:link, .fyiLtLink:visited {
+    color: #FFFFFF;
+}
+
+/* ------------------- Pop-up Styles ------------------- */
+.popupheader1 {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000000;
+}
+
+.popupsubhead {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 15pt;
+    font-weight: normal;
+    color: #FFFFFF;
+}
